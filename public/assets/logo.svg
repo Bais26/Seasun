@@ -1,0 +1,6 @@
+<svg width="200" height="20" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140, 10)">
+    <!-- Contoh SVG untuk ikon makanan cepat -->
+    <path d="M10 20 L15 10 L25 10 L30 20 Z" fill="#secondColor" />
+  </g>
+</svg>

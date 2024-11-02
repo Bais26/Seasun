@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+  }
+
+  .about-text {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .section {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    width: 100%;
+  }
+
+  .section-content {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats {
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .stat p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .learn-about {
+    background-color: #333;
+     color: #fff;
+     padding: 1rem 2rem;
+     border-radius: 8px;
+     cursor: pointer;
+  }
+
+  .learn-about:hover {
+    background-color: #444;
+  }
