@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="text-gray-800 container mx-auto">
             <div className="flex flex-wrap md:flex-nowrap justify-between mx-4 p-4 items-center ">
                 {/* <img src="/assets/LOGO.png" alt="" /> */}
-                <a href="/" className="text-gray-600 font-bold text-2xl flex items-center justify-center">SeaSun International</a>
+                <a href="/" className="text-gray-600 font-bold text-3xl flex items-center justify-center">SeaSun International</a>
                 <div className="hidden md:flex items-center gap-12 md:gap-12  ">
                     {navItems.map((items, index) => {
                         return (

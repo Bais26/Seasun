@@ -9,8 +9,8 @@ function Home() {
   return (
     <div className=''>
       <Hero/>
-      <Product/>
       <Banner/>
+      <Product/>
       <Banner2/>
       <Banner3/>
     </div>

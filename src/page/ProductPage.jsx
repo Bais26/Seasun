@@ -3,17 +3,19 @@ import React, { useState } from 'react';
 
 const products = {
   A: [
-    { id: 1, grade: '2A', size: '21-30cm', image: '/assets/cumi1.png' },
-    { id: 2, grade: '3A', size: '18-20cm', image: '/assets/cumi1.png' },
-    { id: 3, grade: '4A', size: '15-17cm', image: '/assets/cumi1.png' },
-    { id: 4, grade: '5A', size: '12-14cm', image: '/assets/cumi1.png' },
+    { id: 1, grade: '2A', size: '21 – 30 cm' },
+    { id: 2, grade: '3A', size: '18 – 20 cm' },
+    { id: 3, grade: '4A', size: '15 – 17 cm' },
+    { id: 4, grade: '5A', size: '< 14 cm' },
+    { id: 5, grade: 'Costumize Size', size: 'Variation' },
+
   ],
   B: [
-    { id: 5, grade: '2B', size: '21-30cm', image: '/assets/cumi1.png' },
-    { id: 6, grade: '3B', size: '18-20cm', image: '/assets/cumi1.png' },
-    { id: 7, grade: '4B', size: '15-17cm', image: '/assets/cumi1.png' },
-    { id: 8, grade: '5B', size: '12-14cm', image: '/assets/cumi1.png' },
-    { id: 9, grade: 'Cuttlefish', size: '', image: '/assets/cumi1.png' },
+    { id: 1, grade: '2B', size: '21 – 30 cm' },
+    { id: 2, grade: '3B', size: '18 – 20 cm' },
+    { id: 3, grade: '4B', size: '15 – 17 cm' },
+    { id: 4, grade: '5B', size: '< 14 cm' },
+    { id: 5, grade: 'Costumize Size', size: 'Variation' },
   ]
 };
 
@@ -22,7 +24,6 @@ const ProductPage = () => {
 
   return (
     <div>
-
       <div
         className="relative h-[800px] bg-no-repeat bg-center bg-cover"
         style={{ backgroundImage: 'url(/assets/heroproduct.jpg)' }}
@@ -37,41 +38,73 @@ const ProductPage = () => {
             <p className="text-lg mb-6">
               Discover our high-quality Grade A and Grade B products, tailored for your specific needs.
             </p>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="bg-gray-400 hover:bg-black text-black hover:text-white font-bold py-2 px-4 rounded-full">
               <a href="#outproduct">Explore Our Products</a>
             </button>
           </div>
         </div>
       </div>
-
-      <div className="text-center my-8 z-10">
-      <h2 className="text-2xl font-semibold mb-4">Choose Your Grade</h2>
-      <div className="flex justify-center">
-        <button
-          className={`px-4 py-2 mr-2 font-semibold ${selectedGrade === 'A' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
-          onClick={() => setSelectedGrade('A')}
-        >
-          Grade A
-        </button>
-        <button
-          className={`px-4 py-2 font-semibold ${selectedGrade === 'B' ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
-          onClick={() => setSelectedGrade('B')}
-        >
-          Grade B
-        </button>
-      </div>
-    </div>
-    <div id='outproduct' className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-      {products[selectedGrade].map((product) => (
-        <div key={product.id} className="border rounded-lg shadow-lg overflow-hidden bg-white">
-          <img src={`${product.image}`} alt={product.grade} className="w-full h-80 object-cover" />
-          <div className="p-4">
-            <h3 className="text-lg font-semibold">{product.grade}</h3>
-            <p className="text-sm text-gray-500">Size: {product.size}</p>
+      <div>
+        <div className="text-center my-8">
+          <h2 className="text-2xl font-semibold mb-4">Choose Your Grade</h2>
+          <div className="flex justify-center">
+            <button
+              className={`px-4 py-2 mr-2 font-semibold rounded-xl ${selectedGrade === 'A' ? 'bg-black text-white' : 'bg-gray-300'}`}
+              onClick={() => setSelectedGrade('A')}
+            >
+              Grade A
+            </button>
+            <button
+              className={`px-4 py-2 font-semibold rounded-xl ${selectedGrade === 'B' ? 'bg-black text-white' : 'bg-gray-300'}`}
+              onClick={() => setSelectedGrade('B')}
+            >
+              Grade B
+            </button>
           </div>
         </div>
-      ))}
-    </div>
+
+        {/* Table Display */}
+        <div className="overflow-x-auto py-12 px-6">
+          <table className="w-full max-w-screen-2xl mx-auto border-collapse border border-gray-200">
+            <thead>
+              <tr className="bg-yellow-500 text-white">
+                <th className="border border-gray-200 px-4 py-2">Type</th>
+                <th className="border border-gray-200 px-4 py-2">Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products[selectedGrade].map((product) => (
+                <tr key={product.id} className="bg-blue-200 text-center">
+                  <td className="border border-gray-200 px-4 py-2">{product.grade}</td>
+                  <td className="border border-gray-200 px-4 py-2">{product.size}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {/* gallery */}
+      <div>
+        <h1 className="text-center text-3xl font-bold mb-8">Gallery Product</h1>
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 my-6 gap-4 items-center justify-center">
+          <div className="grid gap-4 justify-items-center">
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="" />
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
+          </div>
+          <div className="grid gap-4 justify-items-center">
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
+          </div>
+          <div className="grid gap-4 justify-items-center">
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
+          </div>
+          <div className="grid gap-4 justify-items-center">
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
+            <img className="h-auto rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
