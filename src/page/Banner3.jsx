@@ -1,8 +1,4 @@
 import React from 'react'
-import BannerImg from '/assets/banner-bg.jpg'
-import { motion } from 'framer-motion'
-import { FadeLeft } from '../utility/animation'
-import { IoBagHandleOutline } from 'react-icons/io5'
 
 function Banner3() {
     return (
